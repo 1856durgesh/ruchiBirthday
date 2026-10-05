@@ -1,0 +1,200 @@
+*{
+  font-family: cursive;
+}
+body {
+  background: linear-gradient(to top, #ffccff, #ffccff);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #ff1493;
+  font-size: 2.5em;
+  margin-top: 20px;
+  text-shadow: 2px 2px 8px #ff69b4;
+  position: relative;
+  z-index: 10;
+}
+
+.cake-container {
+  position: relative;
+  text-align: center;
+}
+
+/* Cake */
+.cake {
+  width: 220px;
+  height: 120px;
+  background: linear-gradient(to bottom, #ffb6c1, #ff8fab);
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 120px;
+  position: relative;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cake Halves */
+.cake-left, .cake-right {
+  width: 110px;
+  height: 120px;
+  background: #ff8fab;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  transition: transform 1s ease-in-out;
+}
+
+/* Left Half */
+.cake-left {
+  left: 0;
+}
+
+/* Right Half */
+.cake-right {
+  right: 0;
+}
+
+/* Knife */
+.knife {
+  width: 80px;
+  height: 10px;
+  background: silver;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  display: none;
+}
+
+/* Cut Animation */
+.cut .cake-left {
+  transform: translateX(-40px) rotate(-5deg);
+}
+.cut .cake-right {
+  transform: translateX(40px) rotate(5deg);
+}
+
+/* Celebration Message */
+.celebration {
+  display: none;
+  font-size: 24px;
+  color: #d63384;
+  margin-top: 20px;
+  animation: pop 0.5s ease-in-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.candle {
+  width: 15px;
+  height: 70px;
+  background: red;
+  position: absolute;
+  left: 50%;
+  top: -80px;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+#flame {
+  width: 7px;
+  height: 35px;
+  background: orange;
+  border-radius: 65%;
+  position: absolute;
+  top: -35px;
+  left: 25%;
+  transform: translateX(-50%);
+  animation: flicker 0.4s infinite alternate;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background: #ff4081;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 5px;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #d81b60;
+}
+
+/* Cake cutting animation */
+@keyframes cutCake {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+.cut-animation {
+  animation: cutCake 0.5s ease-in-out;
+}
+
+/* Message animation */
+.birthday-message {
+  font-size: 2em;
+  color: #ff1493;
+  font-weight: bold;
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+@keyframes moveUp {
+  0% { bottom: -100px; opacity: 0; }
+  50% { bottom: 50%; opacity: 0.5; }
+  100% { bottom: 80%; opacity: 1; }
+}
+
+/* Balloon animation */
+.balloon {
+  width: 60px;
+  height: 80px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -80px;
+  animation: fly 6s linear infinite;
+}
+
+.string {
+  width: 2px;
+  height: 60px;
+  background: black;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes fly {
+  0% { transform: translateY(0); opacity: 0.3; }
+  100% { transform: translateY(-600px); opacity: 1; }
+}
